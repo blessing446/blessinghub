@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Student<span>Portal</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Me</a></li>
+                <li class="dropdown">
+                    <a href="projects.html" class="nav-item dropbtn">Portfolio <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="projects.html">All Projects</a>
+                        <a href="planner.html">Academic Planner</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="nav-item active">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="contact" class="page-section">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info-card">
+                    <h3>Secure Connection Node</h3>
+                    <p>Drop a validated query down below to transmit a message directly to my academic routing mailbox.</p>
+                    <div class="contact-meta">
+                        <p><i class="fas fa-envelope"></i>I.blessing6690@miva.edu.ng</p>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName">
+                        <span class="error-msg" id="nameError">Name cannot be empty</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress">
+                        <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber">
+                        <span class="error-msg" id="phoneError">Phone number must contain only digits</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4"></textarea>
+                        <span class="error-msg" id="messageError">Message cannot be empty</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Secure Submit</button>
+                    <div class="success-alert" id="formSuccess">Message verified and sent successfully!</div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 MIVA Open University. All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://wa.me/2349032078279" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="tiktok.com/@user9929432198734" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

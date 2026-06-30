@@ -1,0 +1,568 @@
+/* Custom CSS Variables for Beautiful Orange & White Palette Schemes */
+:root {
+    --bg-primary: #ffffff;          /* Crisp clean white canvas background */
+    --bg-secondary: #f8fafc;        /* Soft off-white for structural cards/sections */
+    --accent-color: #ff6b00;        /* Vibrant energetic orange accent */
+    --accent-hover: #e05e00;        /* Deep burnt orange for interactive hover focus */
+    --text-main: #1e293b;           /* Deep dark slate for sharp readability and contrast */
+    --text-muted: #64748b;          /* Balanced mid-tone gray for placeholder info states */
+    --error-color: #ef4444;         /* High-visibility crimson warning alerts */
+    --success-color: #10b981;       /* Clean forest green success verification indicator */
+    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation Layout */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Navigation System and Dropdown */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-item {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--accent-color);
+}
+
+/* Dropdown Menu CSS */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-secondary);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+    color: var(--accent-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Main Core Layout Architecture */
+.container {
+    max-width: 1200px;
+    margin: 90px auto 40px auto;
+    padding: 2rem;
+}
+
+.page-section {
+    padding: 2rem 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+    color: var(--text-main);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid Framework Implementations */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.badge {
+    background: rgba(255, 107, 0, 0.1);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.bio-text {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    text-align: center;
+}
+
+.profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.profile-img:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+.media-box {
+    margin-top: 1.5rem;
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+/* Cards Layout Grids using modern CSS Grid */
+.about-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card, .project-card {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition-smooth);
+    border: 1px solid #cbd5e1;
+}
+
+.card:hover, .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 25px rgba(255, 107, 0, 0.12);
+}
+
+/* Semantic Academic Table */
+.academic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.academic-table th, .academic-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.academic-table th {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Lists and Badges UI design */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: rgba(255, 107, 0, 0.08);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* Sample Project Card Media Element Styling */
+.project-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.project-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Interactive Academic Task Planner Engine Architecture UI */
+.planner-box {
+    background: var(--bg-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.todo-input-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.todo-input-row input {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid #cbd5e1;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    outline: none;
+}
+
+.todo-input-row input:focus {
+    border-color: var(--accent-color);
+}
+
+.task-status-bar {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    animation: slideIn 0.3s ease;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid var(--accent-color);
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.todo-item.completed {
+    border-left-color: var(--success-color);
+}
+
+.todo-actions button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+}
+
+.complete-btn { color: var(--success-color); }
+.delete-btn { color: var(--error-color); }
+
+/* Secured Input Form & UI Elements Validation System */
+.contact-wrapper {
+    display: flex;
+    gap: 3rem;
+}
+
+.contact-info-card, .contact-form {
+    flex: 1;
+}
+
+.contact-info-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-meta p {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.contact-meta i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    background: var(--bg-primary);
+    border: 1px solid #cbd5e1;
+    padding: 0.8rem;
+    border-radius: 6px;
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    display: none;
+    margin-top: 0.25rem;
+}
+
+.success-alert {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    display: none;
+    font-weight: 600;
+}
+
+/* Global Buttons Style Library Matrix */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary { background: var(--accent-color); color: #ffffff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary { background: transparent; color: var(--text-main); border: 1px solid #cbd5e1; }
+.btn-secondary:hover { background: rgba(0,0,0,0.02); border-color: var(--text-main); }
+.btn-block { width: 100%; display: block; text-align: center; }
+
+/* Footers and Cross Platform Social Networks Links Media Modules */
+footer {
+    background: var(--bg-secondary);
+    padding: 2.5rem 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid #cbd5e1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: var(--transition-smooth);
+    background: var(--bg-primary);
+    border: 1px solid #cbd5e1;
+}
+
+.social-icon.whatsapp:hover { background: #25D366; color: #fff; border-color: #25D366; }
+.social-icon.facebook:hover { background: #1877F2; color: #fff; border-color: #1877F2; }
+.social-icon.tiktok:hover { background: #000000; color: #fff; border-color: #000000; }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Responsive Configuration */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+        cursor: pointer;
+    }
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--text-main);
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-secondary);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+        border-bottom: 1px solid #cbd5e1;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links li { margin: 1.5rem 0; }
+    .dropdown-content { position: relative; box-shadow: none; background: var(--bg-primary); }
+    .hero-container, .contact-wrapper { flex-direction: column; text-align: center; }
+    .cta-buttons { justify-content: center; }
+    .footer-content { flex-direction: column; text-align: center; }
+}
+
+.menu-toggle { display: none; }

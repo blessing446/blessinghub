@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Academic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Student<span>Portal</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Me</a></li>
+                <li class="dropdown">
+                    <a href="projects.html" class="nav-item dropbtn active">Portfolio <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="projects.html">All Projects</a>
+                        <a href="planner.html">Academic Planner</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="projects" class="page-section">
+            <h2 class="section-title">Academic Portfolios</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" alt="Crypto Web UI" class="project-img">
+                    <div class="project-info">
+                        <h4>Crypto Investment Landing Page</h4>
+                        <p>A responsive UI layout tracking Bitcoin and USDT plans built with modern CSS grids and interactive asset tables.</p>
+                        <a href="./crypto.html" target="_blank" class="project-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&q=80&w=400" alt="Skincare Web UI" class="project-img">
+                    <div class="project-info">
+                        <h4>Skincare E-Commerce Hub</h4>
+                        <p>A clean, aesthetic product storefront layout featuring animated hover transitions and detailed product item grid listings.</p>
+                        <a href="./ecomerce.html" target="_blank" class="project-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=400" alt="Entertainment Website" class="project-img">
+                    <div class="project-info">
+                        <h4>Entertainment & Streaming Portal</h4>
+                        <p>A responsive media discovery interface featuring CSS card animations, embedded video structures, and client-side media options.</p>
+                        <a href="./entertainment.html" target="_blank" class="project-link">View Repository <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 MIVA Open University. All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://wa.me/2349032078279" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://tiktok.com/@user9929432198734" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

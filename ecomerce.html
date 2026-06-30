@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÉLO | Modern Minimalist Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #faf9f6; /* Off-white aesthetic */
+            color: #1a1a1a;
+        }
+
+        /* Top Announcement Bar */
+        .announcement {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 8px 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eae8e2;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            margin: 0 20px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #888; }
+
+        .nav-icons a {
+            margin-left: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            min-height: 80vh;
+            align-items: center;
+            padding: 40px 8%;
+            gap: 40px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .hero-content h1 em { font-weight: 600; }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 35px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .shop-btn {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .shop-btn:hover { background: #444; }
+
+        /* Mock Image Placeholder with striking look */
+        .hero-img-box {
+            background: linear-gradient(180deg, #e0ded7 0%, #cecbc2 100%);
+            height: 550px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #666;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Featured Grid */
+        .featured {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-thumb {
+            background: #f0eee7;
+            height: 320px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .product-info h3 { font-size: 1rem; margin-bottom: 5px; font-weight: 600; }
+        .product-info p { color: #777; font-size: 0.9rem; }
+
+        @media(max-width: 968px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { margin: 0 auto 35px auto; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement">COMPLIMENTARY SHIPPING ON ALL ORDERS OVER $150</div>
+
+    <header>
+        <div class="brand">VÉLO</div>
+        <nav>
+            <a href="#">New Arrivals</a>
+            <a href="#">Collections</a>
+            <a href="#">Our Story</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="#">Search</a>
+            <a href="#">Cart (0)</a>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Effortless style for the <em>modern</em> mind.</h1>
+            <p>Curated, sustainably crafted, and designed to outlast structural trends. Discover the Autumn Equinox drop.</p>
+            <a href="#" class="shop-btn">Explore Collection</a>
+        </div>
+        <div class="hero-img-box">
+            [ Editorial Photography ]
+        </div>
+    </main>
+
+    <section class="featured">
+        <h2 class="section-title">The Essentials</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-thumb">[ Product Image ]</div>
+                <div class="product-info">
+                    <h3>Oversized Cashmere Knit</h3>
+                    <p>$185.00</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">[ Product Image ]</div>
+                <div class="product-info">
+                    <h3>Tailored Pleated Trouser</h3>
+                    <p>$145.00</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-thumb">[ Product Image ]</div>
+                <div class="product-info">
+                    <h3>Sculpted Minimalist Blazer</h3>
+                    <p>$295.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

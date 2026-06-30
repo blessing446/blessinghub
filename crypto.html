@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aethel | Institutional Crypto Wealth Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background-color: #080B10; /* Deep dark cosmic background */
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+
+        /* Header Accent Glow */
+        .glow-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 6%;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-dot {
+            width: 10px;
+            height: 10px;
+            background: #00E5FF;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00E5FF;
+        }
+
+        nav a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #00E5FF; }
+
+        .btn-outline {
+            border: 1px solid #223147;
+            padding: 10px 22px;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .btn-outline:hover {
+            border-color: #00E5FF;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            padding: 80px 6%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .badge {
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: #00E5FF;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #00E5FF, #00FF87);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #9CA3AF;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .btn-primary {
+            background: #00E5FF;
+            color: #080B10;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Live Tracker Widget Panel Mockup */
+        .dashboard-mock {
+            background: #0F141C;
+            border: 1px solid #1E293B;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .crypto-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.02);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .crypto-name { font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .crypto-ticker { font-family: 'JetBrains Mono', monospace; color: #6B7280; font-size: 0.85rem;}
+        .crypto-chart { font-family: 'JetBrains Mono', monospace; color: #00FF87; font-weight: 500; }
+
+        @media (max-width: 968px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px;}
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { margin: 0 auto 40px auto; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb"></div>
+
+    <header>
+        <div class="logo"><div class="logo-dot"></div>AETHEL</div>
+        <nav>
+            <a href="#">Markets</a>
+            <a href="#">Yield Strategies</a>
+            <a href="#">Security</a>
+            <a href="#">Company</a>
+        </nav>
+        <a href="#" class="btn-outline">Launch App</a>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <span class="badge">// ALGORITHMIC QUANT ASSET MANAGEMENT</span>
+            <h1>Next-gen yields. <br>Driven by <span>smart data.</span></h1>
+            <p>Optimize your digital asset capital footprint. Access institutional-grade staking, automated portfolio balancing, and risk-mitigated Web3 index positions.</p>
+            <a href="#" class="btn-primary">Start Investing</a>
+        </div>
+        
+        <div class="hero-dashboard">
+            <!-- Mock Dashboard Widget -->
+            <div class="dashboard-mock">
+                <div class="dash-header">
+                    <span style="font-size: 0.9rem; font-weight:600; color:#9CA3AF">Active Yield Strategies</span>
+                    <span style="font-family:'JetBrains Mono'; font-size:0.8rem; color:#00E5FF">LIVE REFRESHING</span>
+                </div>
+                <div class="crypto-row">
+                    <div class="crypto-name">Ethereum <span class="crypto-ticker">ETH</span></div>
+                    <div class="crypto-chart">+4.12% APY</div>
+                </div>
+                <div class="crypto-row">
+                    <div class="crypto-name">Solana <span class="crypto-ticker">SOL</span></div>
+                    <div class="crypto-chart" style="color:#00FF87">+7.89% APY</div>
+                </div>
+                <div class="crypto-row">
+                    <div class="crypto-name">Bitcoin Delta <span class="crypto-ticker">BTC-Δ</span></div>
+                    <div class="crypto-chart">+3.45% APY</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
